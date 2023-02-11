@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { API_Token } from 'src/models/API_Token';
 
 @Component({
@@ -11,19 +10,4 @@ import { API_Token } from 'src/models/API_Token';
 
 export class AppComponent {
   title = 'tsm-demo';
-  username = "boo";
-  password = "4321";
-
-  constructor(private toast : ToastrService, private http:HttpClient) {}
-
-
-
-  submit(){
-    this.http.post('/api/login', {username: this.username, password: this.password}).subscribe(data => {
-      let token: API_Token = <API_Token>data;
-      token.etc = undefined;
-      localStorage.setItem('auth_data', JSON.stringify(token))
-      this.toast.success("tset",'hi')
-    });
-  }
 }
