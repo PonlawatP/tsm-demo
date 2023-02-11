@@ -9,7 +9,7 @@ export class AuthGuard implements CanActivate {
     ) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        if (1) {
+        if (localStorage.getItem('auth_data')) {
             // authorised so return true
             return true;
         }
