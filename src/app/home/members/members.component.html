@@ -1,15 +1,125 @@
+<div class="bg w-[100vw] h-[100vh] fixed bg-no-repeat bg-cover z-[-99]" style="background-image: url('https://static.vecteezy.com/system/resources/previews/002/317/704/original/abstract-wavy-background-in-purple-color-free-vector.jpg');">
 
-<p-panel>
-  <ng-template pTemplate="header">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 d-flex justify-content-between">
-          <h2>Home</h2>
-          <h2 (click)="logout()">logout</h2>
+</div>
+
+<div class="w-full h-[100vh]">
+    <div class="header fixed w-full bg-white/70 backdrop-blur-md z-10">
+      <div class="container-fluid py-3">
+        <div class="row">
+          <div class="col-12 d-flex justify-end">
+            <h2 (click)="logout()">logout</h2>
+          </div>
         </div>
       </div>
     </div>
-  </ng-template>
+
+    <div class="member-list pt-24 bg-slate-200/90 z-0 min-h-full">
+      <div class="container-fluid">
+        <div class="row">
+          <header class="md:flex w-full justify-between">
+            <div class="col-end-6">
+              <h3>รายชื่อผู้ลงทะเบียน</h3>
+            </div>
+            <div class="col-6">
+                <div class="search md:flex justify-end gap-2">
+                  <input
+                    id="tel"
+                    name="tel"
+                    type="text"
+                    required
+                    class="appearance-none relative block w-full px-3 py-2 border w-60 border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    placeholder="ชื่อ สกุล หรือ username"
+                    [(ngModel)]="srh"
+                    />
+                  <button
+                    class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-min"
+                    (click)="search()"
+                    >
+                    
+                    ค้นหา
+                  </button>
+                </div>
+                
+            </div>
+          </header>
+            
+          <div class="row pt-4">
+            <p-panel class="pb-10">
+              <div class="col-12 mt-3 pb-3 border-b border-slate-500/50 md:hidden" *ngFor="let data of members">
+                <div class="header">
+                  <p class="font-bold">ชื่อผู้ใช้:</p>
+                  <p class="pl-2">{{data.username}}</p>
+                </div>
+                <div class="desc desc-name">
+                  <p class="font-bold">ชื่อ-สกุล:</p>
+                  <p class="pl-2">{{data.name}} {{data.surname}}</p>
+                </div>
+                <div class="desc desc-addr">
+                  <p class="font-bold">ที่อยู่:</p>
+                  <p class="pl-2">{{data.address}} ตำบล{{data.t_address}} อำเภอ{{data.a_address}} จังหวัด{{data.p_address}} {{data.zipcode}}</p>
+                </div>
+                <div class="desc desc-addr">
+                  <p class="font-bold">เบอร์โทร:</p>
+                  <p class="pl-2">{{data.tel}}</p>
+                </div>
+                <div class="desc desc-regdate">
+                  <p class="font-bold">วันที่ลงทะเบียน:</p>
+                  <p class="pl-2">{{data.dateofregis}}</p>
+                </div>
+              </div>
+              
+              <p-table class="hidden md:block" [value]="members">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>ชื่อผู้ใช้</th>
+                        <th>ชื่อ</th>
+                        <th>นามสกุล</th>
+                        <th>ที่อยู่</th>
+                        <th>รหัสไปรษณีย์</th>
+                        <th>เบอร์โทร</th>
+                        <th>วันที่ลงทะเบียน</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-member>
+                    <tr>
+                        <td>{{member.username}}</td>
+                        <td>{{member.name}}</td>
+                        <td>{{member.surname}}</td>
+                        <td>{{member.address + " บ้าน" + member.t_address + "อำเภอ" + member.a_address + "จังหวัด" + member.p_address}}</td>
+                        <td>{{member.zipcode}}</td>
+                        <td>{{member.tel}}</td>
+                        <td>{{member.dateofregis}}</td>
+                    </tr>
+                </ng-template>
+              </p-table>
+            </p-panel>
+            <!-- <table class="hidden md:block pb-10">
+              <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Address</th>
+                <th>ZipCode</th>
+                <th>TelNumber</th>
+                <th>Date Of Regis</th>
+              </tr>
+              <tr *ngFor="let member of members">
+                <td>{{member.username}}</td>
+                <td>{{member.name}}</td>
+                <td>{{member.surname}}</td>
+                <td>{{member.address + " บ้าน" + member.t_address + "อำเภอ" + member.a_address + "จังหวัด" + member.p_address}}</td>
+                <td>{{member.zipcode}}</td>
+                <td>{{member.tel}}</td>
+                <td>{{member.dateofregis}}</td>
+              </tr>
+            </table> -->
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- <p-panel>
   <ng-template pTemplate="content">
     <div class="container-fluid">
         <div class="row">
@@ -47,4 +157,4 @@
         </div>
     </div>
   </ng-template>
-</p-panel>
+</p-panel> -->

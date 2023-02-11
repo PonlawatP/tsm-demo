@@ -12,6 +12,7 @@ export class MembersComponent implements OnInit {
 
   constructor(private toast : ToastrService, private http:HttpClient, private router:Router) { }
   members: any = []
+  srh = '';
 
   ngOnInit(): void {
     const opt = {
@@ -33,5 +34,8 @@ export class MembersComponent implements OnInit {
   logout():void {
     localStorage.removeItem('auth_data')
     this.router.navigateByUrl("/account/login")
+  }
+  search(): void {
+
   }
 }
