@@ -7,7 +7,7 @@ import { MembersComponent } from './home/members/members.component';
 import { AuthGuard } from './middle/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: AppComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/members', canActivate: [AuthGuard] },
   {
     path: 'account',
     children: [
