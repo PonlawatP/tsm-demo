@@ -10,7 +10,8 @@ import { PasswordModule } from 'primeng/password';
 import { InputMaskModule } from 'primeng/inputmask';
 import { CalendarModule } from 'primeng/calendar';
 import { RadioButtonModule } from 'primeng/radiobutton';
-import { TableModule } from 'primeng/table';
+import {PanelModule} from 'primeng/panel';
+import {TableModule} from 'primeng/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './account/login/login.component';
@@ -39,7 +40,8 @@ import { AppComponent } from './app.component';
     CalendarModule,
     ReactiveFormsModule,
     RadioButtonModule,
-    TableModule
+    TableModule,
+    PanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
