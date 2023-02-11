@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { API_Token } from 'src/models/API_Token';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { AuthGuard } from 'src/app/middle/auth.guard';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
       next: (data:any) => {
         let token: API_Token = <API_Token>data;
         token.etc = undefined;
+        
         localStorage.setItem('auth_data', JSON.stringify(token))
   
         this.toast.success("เข้าสู่ระบบสำเร็จ")

@@ -10,23 +10,13 @@ export class AuthGuard implements CanActivate {
         private http:HttpClient
     ) {}
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        if (localStorage.getItem('auth_data')) {
-            const opts = {
-                headers: {
-                    'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('auth_data') || '{}')
-                }
-            }
-            this.http.get('http://tsmapi.suksan.group/customers', opts).subscribe({
-                next: (data:any)=>{
-                    return true;
-                }
-            })
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
+        if(localStorage.getItem('auth_data')){
+            return true;
         }
 
-        // not logged in so redirect to login page with the return url
         localStorage.removeItem('auth_data')
         this.router.navigate(['/account/login'], { queryParams: { returnUrl: state.url }});
-        return false;
+        return true;
     }
 }

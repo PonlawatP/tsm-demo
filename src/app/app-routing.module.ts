@@ -7,7 +7,7 @@ import { MembersComponent } from './home/members/members.component';
 import { AuthGuard } from './middle/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/members', canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/members', pathMatch: 'full'},
   {
     path: 'account',
     children: [
@@ -19,8 +19,7 @@ const routes: Routes = [
       },
     ]
   },
-  { path: 'members', component: MembersComponent },
-
+  { path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
