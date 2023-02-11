@@ -36,6 +36,19 @@ export class MembersComponent implements OnInit {
     this.router.navigateByUrl("/account/login")
   }
   search(): void {
-
+    const opt = {
+        headers: {
+            Authorization: 'Bearer ' + (JSON.parse(localStorage.getItem('auth_data') || '{}').token || '')
+        }
+    }
+    this.http.get('/api/customers?search='+this.srh, opt).subscribe({
+        next: (data:any) => {
+            this.members = data
+        },
+        error: (error:any) => {
+            localStorage.removeItem('auth_data')
+            this.router.navigateByUrl("/account/login")
+        }
+      })
   }
 }
