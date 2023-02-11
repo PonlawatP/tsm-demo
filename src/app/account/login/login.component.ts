@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
 
   submit(){
     let bd: any = {username: this.username, password: this.password}
-    console.log(bd);
     
     this.http.post('/api/login', bd).subscribe({
       next: (data:any) => {

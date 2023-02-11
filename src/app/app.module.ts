@@ -10,12 +10,13 @@ import { PasswordModule } from 'primeng/password';
 import { InputMaskModule } from 'primeng/inputmask';
 import { CalendarModule } from 'primeng/calendar';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { TableModule } from 'primeng/table';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { MembersComponent } from './home/members/members.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MembersComponent } from './home/members/members.component';
     InputMaskModule,
     CalendarModule,
     ReactiveFormsModule,
-    RadioButtonModule
+    RadioButtonModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

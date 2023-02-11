@@ -1,1 +1,177 @@
-<p>register works!</p>
+<div class="bg w-[100vw] h-[100vh] fixed bg-no-repeat bg-cover z-[-99]" style="background-image: url('https://static.vecteezy.com/system/resources/previews/002/317/704/original/abstract-wavy-background-in-purple-color-free-vector.jpg');">
+
+</div>
+<div class="full w-full min-h-[100vh] md:flex md:justify-center md:items-center z-1" >
+    <div class="box h-[100vh] md:h-auto grid grid-rows-[max-content] mb-20 md:flex md:flex-col md:w-[35rem]">
+      <div class="header pt-20 pb-4 px-4 text-[3rem] text-white md:text-center">
+        ลงทะเบียน
+      </div>
+      <div class="from bg-white/80 rounded-t-3xl pt-4 pb-8 px-6 mt-4 md:rounded-b-3xl md:pb-8 backdrop-blur-md">
+        <div class="mt-8 space-y-6" action="#" method="POST">
+          <input type="hidden" name="remember" value="true" />
+          <div class="rounded-md shadow-sm -space-y-px">
+            <p class="pb-2">ข้อมูลทั่วไป</p>
+            <div>
+              <!-- <label for="username" class="sr-only">ชื่อผู้ใช้</label> -->
+              <input
+                id="username"
+                name="username"
+                type="text"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="ชื่อผู้ใช้"
+                [(ngModel)]="username"
+              />
+            </div>
+            <div class="grid grid-flow-col">
+              <!-- <label for="name" class="sr-only">ชื่อจริง</label> -->
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="ชื่อจริง"
+                [(ngModel)]="name"
+              />
+              <input
+                id="surname"
+                name="surname"
+                type="text"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="นามสกุล"
+                [(ngModel)]="surname"
+              />
+            </div>
+            <div>
+              <!-- <label for="password" class="sr-only">รหัสผ่าน</label> -->
+              <input
+                id="password"
+                name="password"
+                type="password"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="ชื่อผู้ใช้"
+                [(ngModel)]="password"
+              />
+            </div>
+            <div>
+              <!-- <label for="conf_password" class="sr-only">ยืนยันรหัสผ่าน</label> -->
+              <input
+                id="conf_password"
+                name="conf_password"
+                type="password"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="ยืนยันรหัสผ่าน"
+                [(ngModel)]="conf_password"
+              />
+            </div>
+            <p class="pt-4 pb-2">ข้อมูลที่อยู่</p>
+            <div>
+              <label for="address" class="sr-only">ที่อยู่</label>
+              <input
+                id="address"
+                name="address"
+                type="text"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="ที่อยู่"
+                [(ngModel)]="address"
+              />
+            </div>
+            <div class="grid grid-flow-col">
+              <!-- <label for="t_address" class="sr-only">ตำบล</label> -->
+              <input
+                id="t_address"
+                name="t_address"
+                type="text"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="ตำบล"
+                [(ngModel)]="t_address"
+              />
+              <!-- <label for="a_address" class="sr-only">อำเภอ</label> -->
+              <input
+                id="a_address"
+                name="a_address"
+                type="text"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="อำเภอ"
+                [(ngModel)]="a_address"
+              />
+            </div>
+            <div class="grid grid-flow-col">
+              <!-- <label for="p_address" class="sr-only">จังหวัด</label> -->
+              <input
+                id="p_address"
+                name="p_address"
+                type="text"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="จังหวัด"
+                [(ngModel)]="p_address"
+              />
+              <!-- <label for="zipcode" class="sr-only">รหัสไปรษณีย์</label> -->
+              <input
+                id="zipcode"
+                name="zipcode"
+                type="text"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="รหัสไปรษณีย์"
+                [(ngModel)]="zipcode"
+              />
+            </div>
+            <div>
+              <label for="tel" class="sr-only">เบอร์โทร</label>
+              <input
+                id="tel"
+                name="tel"
+                type="text"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="เบอร์โทร"
+                [(ngModel)]="tel"
+              />
+            </div>
+          </div>
+    
+          <div class="flex items-center justify-end">
+            <div class="text-sm">
+              <p>เป็นผู้ใช้อยู่แล้ว? <a href="/account/login" class="font-medium text-indigo-600 hover:text-indigo-500">
+                เข้าสู่ระบบ
+              </a></p>
+            </div>
+          </div>
+          
+          <div>
+            <button
+              class="group relative w-full flex justify-center py-2 mt-5 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              (click)="submit()"
+              >
+              <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                <svg
+                  class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              ลงทะเบียน
+            </button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+  </div>

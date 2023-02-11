@@ -9,11 +9,12 @@ import { AuthGuard } from './middle/auth.guard';
 const routes: Routes = [
   { path: '', component: AppComponent, canActivate: [AuthGuard] },
   {
-    path: 'account', component: LoginComponent,
+    path: 'account',
     children: [
       {
         path: 'login', component: LoginComponent,
-      }, {
+      }, 
+      {
         path: 'register', component: RegisterComponent
       },
     ]
