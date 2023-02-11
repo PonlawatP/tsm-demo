@@ -14,11 +14,15 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './account/login/login.component';
+import { RegisterComponent } from './account/register/register.component';
+import { MembersComponent } from './home/members/members.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,
